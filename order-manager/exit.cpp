@@ -24,7 +24,7 @@ void deallocation(Store* store) {
 	delete store;
 }
 
-void exitProcess(Store *store) {
+void save(Store* store) {
 	json stringify;
 	stringify["IPHONE_PRODUCT"]["size"] = store->IPHONE_PRODUCT.size;
 	stringify["IPHONE_PRODUCT"]["models"] = modelsParsing(store->IPHONE_PRODUCT.models, store->IPHONE_PRODUCT.size);
@@ -32,12 +32,13 @@ void exitProcess(Store *store) {
 	stringify["MAC_PRODUCT"]["size"] = store->MAC_PRODUCT.size;
 	stringify["MAC_PRODUCT"]["models"] = modelsParsing(store->MAC_PRODUCT.models, store->MAC_PRODUCT.size);
 
-	deallocation(store);
-
-	cout << stringify;
-
 	ofstream file("store.json");
 	file << stringify;
 	file.close();
+}
+
+void exitProcess(Store *store) {
+	save(store);
+	deallocation(store);
 	exit(0);
 }
