@@ -37,6 +37,7 @@ Store* dataLoading() {
 	store->MAC_PRODUCT.models = macModels;
 
 	initData.close();
+	system("cls");
 
 	return store;
 }

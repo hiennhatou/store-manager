@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="array-handler.h" />
-    <ClInclude Include="init.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="random.h" />
     <ClInclude Include="struct.h" />
@@ -31,6 +30,7 @@
     <ClCompile Include="exit.cpp" />
     <ClCompile Include="find.cpp" />
     <ClCompile Include="random.cpp" />
+    <ClCompile Include="read.cpp" />
     <ClCompile Include="rm.cpp" />
     <ClCompile Include="push.cpp" />
     <ClCompile Include="main.cpp" />

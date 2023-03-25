@@ -2,8 +2,7 @@
 using namespace std;
 #include "struct.h"
 
-void entranceMenu(Store* store) {
-	system("cls");
+int entranceMenu() {
 	int choice = 0;
 	cout << "\n       *-------------------------------------------------*";
 	cout << "\n       *   VUI LONG CHON YEU CAU CAN THUC HIEN           *";
@@ -17,4 +16,6 @@ void entranceMenu(Store* store) {
 		cout << "\nNhap lua chon cua ban: ";
 		cin >> choice;
 	}
+	system("cls");
+	return choice;
 }
