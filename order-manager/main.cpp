@@ -1,20 +1,41 @@
 #include <iostream>
 #include <string>
+#include <csignal>
 using namespace std;
 
 #include "struct.h"
-#include "init.h"
 
-void entranceMenu(Store *store);
+Store* dataLoading();
+int entranceMenu();
 void exitProcess(Store* store);
+void read(Store* store);
+void addProductMenu(Store* store);
 
 int main()
 {	
-	srand((unsigned)time(NULL));
+	/// config
 	Store* store = dataLoading();
-	entranceMenu(store);
-	exitProcess(store);
+	srand((unsigned)time(NULL));
+	/// end config
 
-	system("pause");
+	while (true) {
+		int choice;
+		choice = entranceMenu();
+
+		switch (choice) {
+			case 1:
+				addProductMenu(store);
+				break;
+			case 2:
+				read(store);
+				break;
+			case 4:
+				exitProcess(store);
+				break;
+			default:
+				break;
+		}
+	}
+
 	return 0;
 }

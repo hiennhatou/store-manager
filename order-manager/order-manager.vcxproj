@@ -20,17 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="array-handler.h" />
-    <ClInclude Include="init.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="random.h" />
     <ClInclude Include="struct.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addProduct.cpp" />
     <ClCompile Include="data-loading.cpp" />
     <ClCompile Include="entrance.cpp" />
     <ClCompile Include="exit.cpp" />
     <ClCompile Include="find.cpp" />
     <ClCompile Include="random.cpp" />
+    <ClCompile Include="read.cpp" />
     <ClCompile Include="rm.cpp" />
     <ClCompile Include="push.cpp" />
     <ClCompile Include="main.cpp" />

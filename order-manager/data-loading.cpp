@@ -7,11 +7,17 @@ using namespace std;
 #include "json.hpp"
 using json = nlohmann::json;
 
-Model* modelsLoading(json jsonData, unsigned int size) {
+Model* modelsLoading(json jsonData) {
 	unsigned int count = 0;
+	json::iterator begin = jsonData.begin();
+	json::iterator end = jsonData.end();
+
+	unsigned int size = distance(begin, end);
+
 	Model* model = new Model[size];
-	for (json::iterator i = jsonData.begin(); i != jsonData.end(); ++i) {
-		model[count].id = (*i)["id"];
+
+	for (json::iterator i = begin; i != end; ++i) {
+		model[count].id = ((*i)["id"]);
 		model[count].name = (*i)["name"];
 		model[count].price = (*i)["price"];
 		model[count].quantity = (*i)["quantity"];
@@ -28,15 +34,14 @@ Store* dataLoading() {
 
 	Store* store = new Store;
 
-	store->IPHONE_PRODUCT.size = data["IPHONE_PRODUCT"]["size"];
-	Model* iphoneModels = modelsLoading(data["IPHONE_PRODUCT"]["models"], store->IPHONE_PRODUCT.size);
-	store->IPHONE_PRODUCT.models = iphoneModels;
+	store->IPHONE_PRODUCT.size = distance(data["IPHONE_PRODUCT"]["models"].begin(), data["IPHONE_PRODUCT"]["models"].end());;
+	store->IPHONE_PRODUCT.models = modelsLoading(data["IPHONE_PRODUCT"]["models"]);
 
-	store->MAC_PRODUCT.size = data["MAC_PRODUCT"]["size"];
-	Model* macModels = modelsLoading(data["MAC_PRODUCT"]["model"], store->MAC_PRODUCT.size);
-	store->MAC_PRODUCT.models = macModels;
+	store->MAC_PRODUCT.size = distance(data["MAC_PRODUCT"]["models"].begin(), data["MAC_PRODUCT"]["models"].end());
+	store->MAC_PRODUCT.models = modelsLoading(data["MAC_PRODUCT"]["models"]);
 
 	initData.close();
+	system("cls");
 
 	return store;
 }

@@ -7,13 +7,13 @@ struct Model {
 	unsigned int quantity;
 };
 
-struct PrudutLine {
+struct PruductLine {
 	Model* models;
 	unsigned int size;
 };
 
 struct Store {
-	PrudutLine IPHONE_PRODUCT;
-	PrudutLine MAC_PRODUCT;
+	PruductLine IPHONE_PRODUCT;
+	PruductLine MAC_PRODUCT;
 };
 #endif

@@ -16,7 +16,6 @@ Model* ArrayHandler::rm(Model* arr, unsigned int oldSize, unsigned int position)
 		++oldCount;
 	}
 
-	delete[] arr;
 	return newArr;
 }
 
@@ -32,7 +31,6 @@ int* ArrayHandler::rm(int* arr, unsigned int oldSize, unsigned int position) {
 		++oldCount;
 	}
 
-	delete[] arr;
 	return newArr;
 }
 
@@ -48,6 +46,5 @@ string* ArrayHandler::rm(string* arr, unsigned int oldSize, unsigned int positio
 		++oldCount;
 	}
 
-	delete[] arr;
 	return newArr;
 }

@@ -4,7 +4,7 @@ using namespace std;
 #include "struct.h"
 #include "array-handler.h"
 
-unsigned int ArrayHandler::find(Model*arr, unsigned int size, bool (*	expression)(Model)) {
+unsigned int ArrayHandler::find(Model*arr, unsigned int size, bool (*expression)(Model)) {
 	unsigned int count = 0;
 	while (count < size) {
 		if (expression(arr[count])) {
