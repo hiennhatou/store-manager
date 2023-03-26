@@ -32,6 +32,7 @@
     <ClCompile Include="entrance.cpp" />
     <ClCompile Include="exit.cpp" />
     <ClCompile Include="find.cpp" />
+    <ClCompile Include="findModel.cpp" />
     <ClCompile Include="random.cpp" />
     <ClCompile Include="read.cpp" />
     <ClCompile Include="rm.cpp" />

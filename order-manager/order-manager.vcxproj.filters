@@ -89,5 +89,8 @@
     <ClCompile Include="entrance.cpp">
       <Filter>Source Files\router</Filter>
     </ClCompile>
+    <ClCompile Include="findModel.cpp">
+      <Filter>Source Files\router</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
