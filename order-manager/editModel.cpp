@@ -5,6 +5,7 @@ using namespace std;
 
 #include "struct.h"
 #include "array-handler.h"
+#include "string-handler.h"
 
 void editModel(Model* models, unsigned int size) {
 	string id;
@@ -19,6 +20,7 @@ void editModel(Model* models, unsigned int size) {
 
 	if (position < 0 || position >= size) {
 		cout << "Khong tim thay model\n";
+		system("pause");
 		return;
 	}
 	
@@ -34,7 +36,7 @@ void editModel(Model* models, unsigned int size) {
 		cout << "1. Chinh sua name                         \n";
 		cout << "2. Chinh sua price                        \n";
 		cout << "3. Chinh sua quantity                     \n";
-		cout << "4. Thoat                                  \n";
+		cout << "4. Quay lai menu chinh                    \n";
 		while (choice < 1 || choice > 4) {
 			cout << "Lua chon cua ban: ";
 			cin >> choice;
@@ -48,14 +50,20 @@ void editModel(Model* models, unsigned int size) {
 				getline(cin, models->name);
 				break;
 			case 2:
-				cout << "Nhap price: ";
-				cin >> models->price;
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				while (true) {
+					cout << "Nhap price: ";
+					getline(cin, models->price);
+					if (!StringHandler::isNumber(models->price)) continue;
+					break;
+				}
 				break;
 			case 3:
-				cout << "Nhap quantity: ";
-				cin >> models->quantity;
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				while (true) {
+					cout << "Nhap quatity: ";
+					getline(cin, models->quantity);
+					if (!StringHandler::isNumber(models->quantity)) continue;
+					break;
+				}
 				break;
 			case 4:
 				return;
@@ -70,9 +78,11 @@ void editModel(Model* models, unsigned int size) {
 
 void editModelMenu(Store* store) {
 	string a = "";
-	while (a != "MAC_PRODUCT" && a != "IPHONE_PRODUCT") {
-		cout << "Nhap ma code cua dong san pham (\"MAC_PRODUCT\" hoac \"IPHONE_PRODUCT\"): ";
-		getline(cin, a);
+	cout << "Nhap ma code cua dong san pham (\"MAC_PRODUCT\" hoac \"IPHONE_PRODUCT\" hoac nhap bat ky de thoat): ";
+	getline(cin, a);
+	if (a != "MAC_PRODUCT" && a != "IPHONE_PRODUCT") {
+		system("cls");
+		return;
 	}
 
 	if (a == "MAC_PRODUCT") {
