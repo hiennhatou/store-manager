@@ -13,7 +13,7 @@ Model generateModel() {
 	unsigned long int price;
 	unsigned int quantity;
 
-	cout << "Nhap ten san pham: ";
+	cout << "Nhap ten model: ";
 	getline(cin, name);
 	cout << "Nhap gia: ";
 	cin >> price;
@@ -32,7 +32,7 @@ Model generateModel() {
 void addModel(Store* store) {
 	string a;
 	while (a != "IPHONE_PRODUCT" && a != "MAC_PRODUCT") {
-		cout << "Nhap ma san pham: ";
+		cout << "Nhap ma code cua dong model (\"MAC_PRODUCT\" hoac \"IPHONE_PRODUCT\"): ";
 		cin.clear();
 		getline(cin, a);
 	}
@@ -47,7 +47,7 @@ void addModel(Store* store) {
 	}
 	else if(a == "MAC_PRODUCT") {
 		Model* temp = store->MAC_PRODUCT.models;
-		store->MAC_PRODUCT.models = ArrayHandler::push(store->IPHONE_PRODUCT.models, store->MAC_PRODUCT.size, newModel);
+		store->MAC_PRODUCT.models = ArrayHandler::push(store->MAC_PRODUCT.models, store->MAC_PRODUCT.size, newModel);
 		delete[] temp;
 		store->MAC_PRODUCT.size += 1;
 	}

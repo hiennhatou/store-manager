@@ -7,10 +7,10 @@ using namespace std;
 int readMenu() {
 	int a = 0;
 	cout << "\n       *-------------------------------------------------*";
-	cout << "\n       *   VUI LONG CHON YEU CAU CAN THUC HIEN           *";
-	cout << "\n       *      1. MACBOOK PRODUCT                         *";
-	cout << "\n       *      2. IPHONE PRODUCT                          *";
-	cout << "\n       *      3. TAT CA SAN PHAM                         *";
+	cout << "\n       *   VUI LONG CHON DONG SAN PHAM                   *";
+	cout << "\n       *      1. MACBOOK PRODUCT LINE                    *";
+	cout << "\n       *      2. IPHONE PRODUCT LINE                     *";
+	cout << "\n       *      3. TAT CA DONG SAN PHAM                    *";
 	cout << "\n       *-------------------------------------------------*";
 	while (a < 1 || a > 3) {
 		cout << "\n   Nhap lua chon: ";
@@ -25,7 +25,7 @@ int readMenu() {
 void readProductLine(PruductLine productLine) {
 	cout << "Tong san pham: " << productLine.size << endl;
 	for (int i = 0; i < productLine.size; i++) {
-		cout << "............... Product " << i+1 << " ...............\n";
+		cout << "............... Model " << i+1 << " ...............\n";
 		cout << "Code: " << productLine.models[i].id << endl;
 		cout << "Name: " << productLine.models[i].name << endl;
 		cout << "Price: " << productLine.models[i].price << endl;
@@ -44,9 +44,9 @@ void read(Store* store) {
 			readProductLine(store->IPHONE_PRODUCT);
 			break;
 		case 3:
-			cout << "========================== MAC PRODUCT ==========================\n";
+			cout << "======================== MAC PRODUCT LINE ========================\n";
 			readProductLine(store->MAC_PRODUCT);
-			cout << "======================== IPHONE PRODUCT =========================\n";
+			cout << "====================== IPHONE PRODUCT LINE =======================\n";
 			readProductLine(store->IPHONE_PRODUCT);
 			break;
 	}
