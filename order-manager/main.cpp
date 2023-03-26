@@ -10,6 +10,7 @@ void exitProcess(Store* store);
 void read(Store* store);
 void addModelMenu(Store* store);
 void rmModelMenu(Store* store);
+void editModelMenu(Store* store);
 
 int main()
 {	
@@ -28,6 +29,9 @@ int main()
 				break;
 			case 2:
 				addModelMenu(store);
+				break;
+			case 3:
+				editModelMenu(store);
 				break;
 			case 4:
 				rmModelMenu(store);
