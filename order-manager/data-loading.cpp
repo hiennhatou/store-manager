@@ -30,15 +30,22 @@ Model* modelsLoading(json jsonData) {
 Store* dataLoading() {
 	cout << "Loading data........" << endl;
 	ifstream initData("store.json");
-	json data = json::parse(initData);
-
 	Store* store = new Store;
+	if (initData.good()) {
+		json data = json::parse(initData);
 
-	store->IPHONE_PRODUCT.size = distance(data["IPHONE_PRODUCT"]["models"].begin(), data["IPHONE_PRODUCT"]["models"].end());;
-	store->IPHONE_PRODUCT.models = modelsLoading(data["IPHONE_PRODUCT"]["models"]);
+		store->IPHONE_PRODUCT.size = distance(data["IPHONE_PRODUCT"]["models"].begin(), data["IPHONE_PRODUCT"]["models"].end());;
+		store->IPHONE_PRODUCT.models = modelsLoading(data["IPHONE_PRODUCT"]["models"]);
 
-	store->MAC_PRODUCT.size = distance(data["MAC_PRODUCT"]["models"].begin(), data["MAC_PRODUCT"]["models"].end());
-	store->MAC_PRODUCT.models = modelsLoading(data["MAC_PRODUCT"]["models"]);
+		store->MAC_PRODUCT.size = distance(data["MAC_PRODUCT"]["models"].begin(), data["MAC_PRODUCT"]["models"].end());
+		store->MAC_PRODUCT.models = modelsLoading(data["MAC_PRODUCT"]["models"]);
+	}
+	else {
+		store->IPHONE_PRODUCT.size = 0;
+		store->MAC_PRODUCT.size = 0;
+		store->IPHONE_PRODUCT.models = new Model[0];
+		store->MAC_PRODUCT.models = new Model[0];
+	}
 
 	initData.close();
 	system("cls");
