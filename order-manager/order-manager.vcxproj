@@ -25,6 +25,7 @@
     <ClInclude Include="struct.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addProduct.cpp" />
     <ClCompile Include="data-loading.cpp" />
     <ClCompile Include="entrance.cpp" />
     <ClCompile Include="exit.cpp" />

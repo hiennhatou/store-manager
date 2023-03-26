@@ -71,6 +71,9 @@
     <ClCompile Include="read.cpp">
       <Filter>Source Files\router</Filter>
     </ClCompile>
+    <ClCompile Include="addProduct.cpp">
+      <Filter>Source Files\router</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="store.json">

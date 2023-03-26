@@ -15,6 +15,7 @@ int readMenu() {
 	while (a < 1 || a > 3) {
 		cout << "\n   Nhap lua chon: ";
 		cin >> a;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
 	system("cls");
 
@@ -38,18 +39,17 @@ void read(Store* store) {
 	switch (choice) {
 		case 1:
 			readProductLine(store->MAC_PRODUCT);
-			system("pause");
 			break;
 		case 2:
 			readProductLine(store->IPHONE_PRODUCT);
-			system("pause");
 			break;
 		case 3:
 			cout << "========================== MAC PRODUCT ==========================\n";
 			readProductLine(store->MAC_PRODUCT);
 			cout << "======================== IPHONE PRODUCT =========================\n";
 			readProductLine(store->IPHONE_PRODUCT);
-			system("pause");
 			break;
 	}
+	system("pause");
+	system("cls");
 }
