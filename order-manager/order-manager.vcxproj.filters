@@ -77,6 +77,9 @@
     <ClCompile Include="rmModel.cpp">
       <Filter>Source Files\router</Filter>
     </ClCompile>
+    <ClCompile Include="editModel.cpp">
+      <Filter>Source Files\router</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="store.json">

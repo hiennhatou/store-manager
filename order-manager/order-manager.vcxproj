@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClCompile Include="addModel.cpp" />
     <ClCompile Include="data-loading.cpp" />
+    <ClCompile Include="editModel.cpp" />
     <ClCompile Include="entrance.cpp" />
     <ClCompile Include="exit.cpp" />
     <ClCompile Include="find.cpp" />
