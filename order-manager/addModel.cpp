@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <functional>
 using namespace std;
 
 #include "struct.h"
@@ -28,7 +29,7 @@ Model generateModel() {
 	return model;
 }
 
-void addProduct(Store* store) {
+void addModel(Store* store) {
 	string a;
 	while (a != "IPHONE_PRODUCT" && a != "MAC_PRODUCT") {
 		cout << "Nhap ma san pham: ";
@@ -42,17 +43,17 @@ void addProduct(Store* store) {
 		Model* temp = store->IPHONE_PRODUCT.models;
 		store->IPHONE_PRODUCT.models = ArrayHandler::push(store->IPHONE_PRODUCT.models, store->IPHONE_PRODUCT.size, newModel);
 		delete[] temp;
-		store->IPHONE_PRODUCT.size = store->IPHONE_PRODUCT.size + 1;
+		store->IPHONE_PRODUCT.size += 1;
 	}
 	else if(a == "MAC_PRODUCT") {
 		Model* temp = store->MAC_PRODUCT.models;
 		store->MAC_PRODUCT.models = ArrayHandler::push(store->IPHONE_PRODUCT.models, store->MAC_PRODUCT.size, newModel);
 		delete[] temp;
-		store->MAC_PRODUCT.size = store->MAC_PRODUCT.size + 1;
+		store->MAC_PRODUCT.size += 1;
 	}
 }
 
-void addProductMenu(Store* store) {
+void addModelMenu(Store* store) {
 	int numberOfInsert = 0;
 	while (numberOfInsert <= 0) {
 		cout << "So model can nhap: ";
@@ -62,7 +63,7 @@ void addProductMenu(Store* store) {
 	
 	for (int i = 0; i < numberOfInsert; i++) {
 		cout << "========= Them San Pham " << i + 1 << " =========\n";
-		addProduct(store);
+		addModel(store);
 	}
 
 	system("cls");

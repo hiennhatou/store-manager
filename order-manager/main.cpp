@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <csignal>
 using namespace std;
 
 #include "struct.h"
@@ -9,7 +8,8 @@ Store* dataLoading();
 int entranceMenu();
 void exitProcess(Store* store);
 void read(Store* store);
-void addProductMenu(Store* store);
+void addModelMenu(Store* store);
+void rmModelMenu(Store* store);
 
 int main()
 {	
@@ -24,12 +24,15 @@ int main()
 
 		switch (choice) {
 			case 1:
-				addProductMenu(store);
-				break;
-			case 2:
 				read(store);
 				break;
+			case 2:
+				addModelMenu(store);
+				break;
 			case 4:
+				rmModelMenu(store);
+				break;
+			case 5:
 				exitProcess(store);
 				break;
 			default:
