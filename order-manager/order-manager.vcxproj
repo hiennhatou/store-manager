@@ -38,9 +38,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rmModel.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="store.json" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
