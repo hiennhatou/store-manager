@@ -13,8 +13,8 @@ public:
 	static string* rm(string* arr, unsigned int oldSize, unsigned int position);
 
 	/* find */
-	static unsigned int find(Model* arr, unsigned int size, bool (*expression)(Model));
-	static unsigned int find(int* arr, unsigned int size, bool (*expression)(int));
-	static unsigned int find(string* arr, unsigned int size, bool (*expression)(string));
+	static int find(Model* arr, unsigned int size, function<bool(Model)> expression);
+	static int find(int* arr, unsigned int size, bool (*expression)(int));
+	static int find(string* arr, unsigned int size, bool (*expression)(string));
 };
 #endif

@@ -1,10 +1,11 @@
 #include <string>
+#include <functional>
 using namespace std;
 
 #include "struct.h"
 #include "array-handler.h"
 
-unsigned int ArrayHandler::find(Model*arr, unsigned int size, bool (*expression)(Model)) {
+int ArrayHandler::find(Model*arr, unsigned int size, function<bool(Model)> expression) {
 	unsigned int count = 0;
 	while (count < size) {
 		if (expression(arr[count])) {
@@ -12,9 +13,10 @@ unsigned int ArrayHandler::find(Model*arr, unsigned int size, bool (*expression)
 		}
 		++count;
 	}
+	return -1;
 }
 
-unsigned int ArrayHandler::find(int* arr, unsigned int size, bool (*expression)(int)) {
+int ArrayHandler::find(int* arr, unsigned int size, bool (*expression)(int)) {
 	unsigned int count = 0;
 	while (count < size) {
 		if (expression(arr[count])) {
@@ -22,9 +24,10 @@ unsigned int ArrayHandler::find(int* arr, unsigned int size, bool (*expression)(
 		}
 		++count;
 	}
+	return -1;
 }
 
-unsigned int ArrayHandler::find(string* arr, unsigned int size, bool (*expression)(string)) {
+int ArrayHandler::find(string* arr, unsigned int size, bool (*expression)(string)) {
 	unsigned int count = 0;
 	while (count < size) {
 		if (expression(arr[count])) {
@@ -32,4 +35,5 @@ unsigned int ArrayHandler::find(string* arr, unsigned int size, bool (*expressio
 		}
 		++count;
 	}
+	return -1;
 }

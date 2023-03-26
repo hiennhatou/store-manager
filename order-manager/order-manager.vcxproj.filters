@@ -71,7 +71,10 @@
     <ClCompile Include="read.cpp">
       <Filter>Source Files\router</Filter>
     </ClCompile>
-    <ClCompile Include="addProduct.cpp">
+    <ClCompile Include="addModel.cpp">
+      <Filter>Source Files\router</Filter>
+    </ClCompile>
+    <ClCompile Include="rmModel.cpp">
       <Filter>Source Files\router</Filter>
     </ClCompile>
   </ItemGroup>
