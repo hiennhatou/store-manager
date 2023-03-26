@@ -28,6 +28,9 @@
     <Filter Include="Source Files\helper">
       <UniqueIdentifier>{2fa2b767-1d0f-4dc2-ac03-631fd0435ccd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\utils\String-Handler">
+      <UniqueIdentifier>{d0f81d0b-0994-402f-98b9-c2075d384c37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="array-handler.h">
@@ -40,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="string-handler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,9 +65,6 @@
     <ClCompile Include="random.cpp">
       <Filter>Source Files\utils\Random</Filter>
     </ClCompile>
-    <ClCompile Include="entrance.cpp">
-      <Filter>Source Files\router</Filter>
-    </ClCompile>
     <ClCompile Include="data-loading.cpp">
       <Filter>Source Files\helper</Filter>
     </ClCompile>
@@ -78,6 +81,12 @@
       <Filter>Source Files\router</Filter>
     </ClCompile>
     <ClCompile Include="editModel.cpp">
+      <Filter>Source Files\router</Filter>
+    </ClCompile>
+    <ClCompile Include="isNumber.cpp">
+      <Filter>Source Files\utils\String-Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="entrance.cpp">
       <Filter>Source Files\router</Filter>
     </ClCompile>
   </ItemGroup>

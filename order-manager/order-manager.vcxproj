@@ -22,6 +22,7 @@
     <ClInclude Include="array-handler.h" />
     <ClInclude Include="json.hpp" />
     <ClInclude Include="random.h" />
+    <ClInclude Include="string-handler.h" />
     <ClInclude Include="struct.h" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +38,7 @@
     <ClCompile Include="push.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rmModel.cpp" />
+    <ClCompile Include="isNumber.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

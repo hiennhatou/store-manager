@@ -3,8 +3,8 @@
 struct Model {
 	string id;
 	string name;
-	unsigned long int price;
-	unsigned int quantity;
+	string price;
+	string quantity;
 };
 
 struct PruductLine {

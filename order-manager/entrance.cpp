@@ -1,23 +1,36 @@
 #include<iostream>
+#include<string>
 using namespace std;
 #include "struct.h"
+#include "string-handler.h"
 
 int entranceMenu() {
-	int choice = 0;
+	string choiceStr = "";
+	int choice;
+
 	cout << "\n       *-------------------------------------------------*";
 	cout << "\n       *   VUI LONG CHON YEU CAU CAN THUC HIEN           *";
 	cout << "\n       *      1. Xem san pham trong kho                  *";
 	cout << "\n       *      2. Nhap model                              *";
 	cout << "\n       *      3. Chinh sua model                         *";
 	cout << "\n       *      4. Xoa model                               *";
-	cout << "\n       *      5. Thoat                                   *";
-	cout << "\n       *-------------------------------------------------*";
+	cout << "\n       *      5. Luu & Thoat                             *";
+	cout << "\n       *-------------------------------------------------*\n";
 
-	while (choice > 5 || choice < 1) {
-		cout << "\nNhap lua chon cua ban: ";
-		cin >> choice;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	while (true) {
+		cout << "Nhap lua chon cua ban: ";
+		getline(cin, choiceStr);
+		if (!StringHandler::isNumber(choiceStr)) continue;
+		try {
+			choice = stoi(choiceStr);
+		}
+		catch (...) {
+			continue;
+		}
+		if (choice < 1 || choice > 5) continue;
+		break;
 	}
+
 	system("cls");
 	return choice;
 }

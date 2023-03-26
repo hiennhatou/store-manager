@@ -37,9 +37,11 @@ Model* rmModel(Model* models, unsigned int size) {
 
 void rmModelMenu(Store* store) {
 	string a = "";
-	while (a != "MAC_PRODUCT" && a != "IPHONE_PRODUCT") {
-		cout << "Nhap ma code cua dong san pham (\"MAC_PRODUCT\" hoac \"IPHONE_PRODUCT\"): ";
-		getline(cin, a);
+	cout << "Nhap ma code cua dong san pham (\"MAC_PRODUCT\" hoac \"IPHONE_PRODUCT\" hoac nhap bat ky de thoat): ";
+	getline(cin, a);
+	if (a != "MAC_PRODUCT" && a != "IPHONE_PRODUCT") {
+		system("cls");
+		return;
 	}
 
 	if (a == "MAC_PRODUCT") {

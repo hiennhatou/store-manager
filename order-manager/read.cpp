@@ -3,23 +3,35 @@
 using namespace std;
 
 #include "struct.h"
+#include "string-handler.h"
 
 int readMenu() {
-	int a = 0;
+	string choiceStr = "";
+	int choice = 0;
 	cout << "\n       *-------------------------------------------------*";
 	cout << "\n       *   VUI LONG CHON DONG SAN PHAM                   *";
 	cout << "\n       *      1. MACBOOK PRODUCT LINE                    *";
 	cout << "\n       *      2. IPHONE PRODUCT LINE                     *";
 	cout << "\n       *      3. TAT CA DONG SAN PHAM                    *";
-	cout << "\n       *-------------------------------------------------*";
-	while (a < 1 || a > 3) {
-		cout << "\n   Nhap lua chon: ";
-		cin >> a;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	cout << "\n       *      4. Quay lai menu chinh                     *";
+	cout << "\n       *-------------------------------------------------*\n";
+	while (true) {
+		cout << "Nhap lua chon cua ban: ";
+		getline(cin, choiceStr);
+		if (!StringHandler::isNumber(choiceStr)) continue;
+		try {
+			choice = stoi(choiceStr);
+		}
+		catch (...) {
+			continue;
+		}
+		if (choice < 1 || choice > 4) continue;
+		break;
 	}
+
 	system("cls");
 
-	return a;
+	return choice;
 }
 
 void readProductLine(PruductLine productLine) {
@@ -49,6 +61,9 @@ void read(Store* store) {
 			cout << "====================== IPHONE PRODUCT LINE =======================\n";
 			readProductLine(store->IPHONE_PRODUCT);
 			break;
+		case 4:
+			system("cls");
+			return;
 	}
 	system("pause");
 	system("cls");
