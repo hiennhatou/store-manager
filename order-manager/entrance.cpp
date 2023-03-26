@@ -14,7 +14,8 @@ int entranceMenu() {
 	cout << "\n       *      2. Nhap model                              *";
 	cout << "\n       *      3. Chinh sua model                         *";
 	cout << "\n       *      4. Xoa model                               *";
-	cout << "\n       *      5. Luu & Thoat                             *";
+	cout << "\n       *      5. Tim kiem model                          *";
+	cout << "\n       *      6. Luu & Thoat                             *";
 	cout << "\n       *-------------------------------------------------*\n";
 
 	while (true) {
@@ -27,7 +28,7 @@ int entranceMenu() {
 		catch (...) {
 			continue;
 		}
-		if (choice < 1 || choice > 5) continue;
+		if (choice < 1 || choice > 6) continue;
 		break;
 	}
 

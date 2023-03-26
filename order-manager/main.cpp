@@ -11,6 +11,7 @@ void read(Store* store);
 void addModelMenu(Store* store);
 void rmModelMenu(Store* store);
 void editModelMenu(Store* store);
+void findModelMenu(Store* store);
 
 int main()
 {	
@@ -37,6 +38,9 @@ int main()
 				rmModelMenu(store);
 				break;
 			case 5:
+				findModelMenu(store);
+				break;
+			case 6:
 				exitProcess(store);
 				break;
 			default:

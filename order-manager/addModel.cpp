@@ -31,7 +31,7 @@ Model generateModel() {
 		break;
 	}
 
-	model.id = random(10);
+	model.id = random(6);
 	model.name = name;
 	model.quantity = quantity;
 	model.price = price;
